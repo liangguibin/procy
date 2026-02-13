@@ -1,13 +1,12 @@
-package version
+package cmd
 
 import (
-	"github.com/olekukonko/tablewriter"
+	"github.com/liangguibin/procy/service"
 	"github.com/spf13/cobra"
-	"os"
 )
 
-// RootCmd version
-var RootCmd = &cobra.Command{
+// version command
+var versionCmd = &cobra.Command{
 	Use:   "version",
 	Short: "version number",
 	Long:  `the version number of procy`,
@@ -17,9 +16,11 @@ var RootCmd = &cobra.Command{
 			{"v0.0.1"},
 		}
 
-		table := tablewriter.NewWriter(os.Stdout)
-		table.Header(data[0])
-		_ = table.Bulk(data[1:])
-		_ = table.Render()
+		service.Output(data)
 	},
+}
+
+// init
+func init() {
+	rootCmd.AddCommand(versionCmd)
 }
