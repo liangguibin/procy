@@ -5,7 +5,7 @@
 
 ### 🔧 Framework
 - spf13/cobra
-- olekukonko/tablewriter
+- jedib0t/go-pretty
 
 ### 🛠 Build
 - `GOOS=linux GOARCH=amd64 go build -o procy main.go`
